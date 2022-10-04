@@ -12,5 +12,12 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
-}
+  return tutorials.map((title) => { // .map() returns new array of tutorials
+    const letters = title.split(" "); // splits strings
+    const capitalizedLetters = letters.map( // returns new array of split letters in tutorials
+      (letter) => letter.charAt(0).toUpperCase() + letter.slice(1) // .charAt(index) returns a new string; upper cased; String.prototype.slice(start index to the end of string)
+    );
+    const response = capitalizedLetters.join(" "); //Array.prototype.join() creates and returns a new string by concatenating all of the elements in an array
+    return response;
+  });
+};
